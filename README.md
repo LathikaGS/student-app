@@ -1,59 +1,90 @@
-# StudentApp
+# Student Management Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+This is an Angular-based Student Management Application built using standalone components, reactive forms, and simple routing. The application allows users to view all students and add new students dynamically.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
+### 1. Home Page – Display All Students
+The home page lists all students with the following details:
+- Name  
+- Class  
+- Gender  
+- Hobby (or "No hobby")  
+- Favourite Subject  
+
+Two student records are preloaded.
+
+---
+
+### 2. Add Student Page
+A reactive form is used to capture student details.
+
+#### Form Fields
+| Field | Type | Validation |
+|-------|------|------------|
+| Name | Text | Required, Minimum length 5 | 
+| Class | Dropdown (6, 7, 8, 9) | Required |
+| Gender | Radio | Required | 
+| Has Hobby | Checkbox | Default: No |
+| Hobby | Text | Visible only when Has Hobby is checked | 
+| Favourite Subject | Dropdown | Optional | 
+
+#### Dynamic UI Behavior (using *ngIf)
+- When Class = 9 → "You will appear in board exams soon. All the Best !!"
+- When Class = 6 → "Welcome to middle school!"
+- When Class is selected (other than 6 or 9) → "Education and hobby go hand in hand!"
+- When "Has Hobby" is checked → Hobby input field becomes visible
+
+---
+
+### 3. Add Students to the List
+When the user clicks Save:
+- The student is added to the main student list
+- The user is redirected back to the home page
+- The home page displays the updated student list
+
+---
+
+### 4. Navigation Menu
+A simple left-side navigation menu contains:
+- Home
+- Add Student
+
+Routing is handled using Angular's provideRouter and standalone routes.
+
+---
+
+## Project Structure
+
+```
+src/
+└── app/
+├── app.ts
+├── app.html
+├── app.css
+├── app.routes.ts
+├── models/
+│ └── student.ts
+├── services/
+│ └── student-service.ts
+└── components/
+├── home/
+│ ├── home.ts
+│ └── home.html
+└── add-student/
+├── add-student.ts
+└── add-student.html
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Technologies Used
+- Angular (Standalone Components)
+- TypeScript
+- Reactive Forms
+- Angular Routing
+- Basic CSS Styling
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
