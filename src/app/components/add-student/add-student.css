@@ -1,0 +1,31 @@
+.add-container {
+  padding: 20px;
+  background: #f3e8ff;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #b583ff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #c084fc;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.msg { color: red; font-size: 13px; }
+.class-msg { color: #6b21a8; margin-top: 5px; }

@@ -1,0 +1,13 @@
+.home-container {
+  padding: 20px;
+  background: lavender;
+  min-height: 100vh;
+}
+
+.student-card {
+  background: #f3e8ff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #c7a7ff;
+}

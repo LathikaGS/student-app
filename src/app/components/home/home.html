@@ -1,0 +1,11 @@
+<div class="home-container">
+  <h2>All Students</h2>
+
+  <div *ngFor="let s of studentService.students" class="student-card">
+    <p><strong>Name:</strong> {{ s.name }}</p>
+    <p><strong>Class:</strong> {{ s.class }}</p>
+    <p><strong>Gender:</strong> {{ s.gender }}</p>
+    <p><strong>Hobby:</strong> {{ s.hasHobby ? s.hobby : 'No hobby' }}</p>
+    <p><strong>Favourite Subject:</strong> {{ s.favouriteSubject }}</p>
+  </div>
+</div>
